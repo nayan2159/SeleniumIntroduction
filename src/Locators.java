@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Locators {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		//IMPLICIT WAIT-5 SEC TIME OUT
 		System.setProperty("webdriver.chrome.driver",
@@ -19,15 +19,21 @@ public class Locators {
 		driver.findElement(By.className("signInBtn")).click();
 		System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
 		driver.findElement(By.linkText("Forgot your password?")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("John");
 		driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("john@rsa.com");
 		driver.findElement(By.xpath("//input[@type='text'][2]")).clear();
 		driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys("john@gmail.com");
+		driver.findElement(By.xpath("//form/input[3]")).sendKeys("7020852565");
+		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
+		System.out.println(driver.findElement(By.cssSelector("form p")).getText());
+		
+		
+		
+		
+		
+		
 
-		
-		
-		
-		
 		
 	}
 
