@@ -8,7 +8,7 @@ public class Locators {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		//IMPLICIT WAIT-5 SEC TIME OUT
+		// IMPLICIT WAIT-5 SEC TIME OUT
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\nayan\\OneDrive\\Documents\\chromedriver-win64\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -27,14 +27,18 @@ public class Locators {
 		driver.findElement(By.xpath("//form/input[3]")).sendKeys("7020852565");
 		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
 		System.out.println(driver.findElement(By.cssSelector("form p")).getText());
-		
-		
-		
-		
-		
-		
 
-		
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Nayan");
+		driver.findElement(By.cssSelector("input[type*='Pass']")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.id("chkboxOne")).click();
+
+		driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
+
+		// driver.findElement(By.cssSelector("label[for='chkboxOne']")).click();
+
 	}
 
 }
